@@ -1,60 +1,18 @@
 #include <Arduino.h>
-#include <HCSR04.h>
 
-#define p_trig 5
-#define p_echo 3
-#define buz 8
-
-UltraSonicDistanceSensor distanceSensor(p_trig, p_echo);
-const int In3 = 9;
-const int In4 = 10;
-const int In1 = 6;
-const int In2 = 11;
+// put function declarations here:
+int myFunction(int, int);
 
 void setup() {
-  pinMode(In3, OUTPUT);
-  pinMode(In4, OUTPUT);
-  pinMode(In1, OUTPUT);
-  pinMode(In2, OUTPUT);
-  pinMode(buz, OUTPUT);
-
-  digitalWrite(In3, LOW);
-  digitalWrite(In4, LOW);
-  digitalWrite(In1, LOW);
-  digitalWrite(In2, LOW);
-  Serial.begin(9600);
+  // put your setup code here, to run once:
+  int result = myFunction(2, 3);
 }
 
 void loop() {
-  float distance = distanceSensor.measureDistanceCm();
-
-  if (distance != -1) {
-    Serial.println(distance);
-  } else {
-    Serial.println("Erro: Sensor de distancia nao conseguiu uma leitura valida.");
+  // put your main code here, to run repeatedly:
 }
 
-  if(distance > 0 && distance <= 7){
-  tone(buz, 320);
-  digitalWrite(In3, LOW);
-  digitalWrite(In4, HIGH);
-  digitalWrite(In1, HIGH);
-  digitalWrite(In2, LOW);
-  } else if(distance > 7 && distance <=20){
-  tone(buz, 320);
-  delay(100);
-  tone(buz, 0);
-  delay(100);
-  digitalWrite(In3, LOW);
-  digitalWrite(In4, HIGH);
-  digitalWrite(In1, LOW);
-  digitalWrite(In2, HIGH);
-} else if(distance > 20 && distance <= 100){
-  noTone(buz);
-  digitalWrite(In3, LOW);
-  digitalWrite(In4, HIGH);
-  digitalWrite(In1, LOW);
-  digitalWrite(In2, HIGH);
-}
-
+// put function definitions here:
+int myFunction(int x, int y) {
+  return x + y;
 }
