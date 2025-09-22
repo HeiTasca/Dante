@@ -1,8 +1,3 @@
-Aqui está um README.md para o seu projeto Arduino. Ele explica de forma clara o que o código faz, como funciona e como montar:
-
-
----
-
 🚗 Sistema de Controle com Sensor Ultrassônico, Motor e Buzzer
 
 Este projeto utiliza um Arduino, um sensor ultrassônico HC-SR04, motores DC com ponte H, LEDs e um buzzer para criar um sistema de detecção de distância com resposta sonora e visual.
